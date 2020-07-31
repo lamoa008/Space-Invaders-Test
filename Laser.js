@@ -1,10 +1,11 @@
 class Laser {
-    constructor(x, y, vel) {
+    constructor(x, y, vel, c) {
         this.pos = createVector(x, y);
         this.hastighet = vel;
         this.w = 5
             this.h = 10
             this.skalSlettes = false;
+			this.c = c
     }
 
     settHastighet(hastighet) {
@@ -12,7 +13,7 @@ class Laser {
     }
 
     show() {
-        fill(0, 255, 0)
+        fill(this.c)
         rect(this.pos.x, this.pos.y, this.w, this.h);
     }
 
