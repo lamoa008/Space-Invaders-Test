@@ -1,0 +1,38 @@
+ < !DOCTYPE html >
+ < html lang = "en" >
+     < head >
+
+     < meta charset = "utf-8" /  >
+
+     <  / head >
+     < body >
+     < script >
+
+    let Tall = 18
+    let Tall2 = 12
+    let Tekst = "Hei!?"
+    let Liste = [];
+let Farge = [];
+Liste.push("Hest")
+Liste.push("Ape")
+Liste.push("Hund")
+Liste.push("Katt")
+Farge.push("Sort")
+Farge.push("Hvit")
+Farge.push("Blå")
+Farge.push("Rød")
+Farge.push("Grønn")
+for (let index = 0; index < Liste.length; index++) {
+    Liste[index] = Liste[index] + index
+        console.log(Liste[index])
+}
+console.log("Tallene er: " + Tall + " og " + Tall2)
+console.log(Tekst)
+for (let index = 0; index < Liste.length; index++) {
+    for (let index2 = 0; index2 < Farge.length; index2++) {
+        console.log(Liste[index] + Farge[index2])
+    }
+}
+ <  / script >
+ <  / body >
+<  / html >
