@@ -3,9 +3,9 @@ class Boss {
         this.pos = createVector(x, y);
         this.hastighet = 2
         this.w = 100
-            this.h = 100
-            this.skalSlettes = false;
-			this.HP =  50
+        this.h = 100
+        this.skalSlettes = false;
+        this.HP = 50
     }
 
     getCenter() {
@@ -23,11 +23,11 @@ class Boss {
 
     harKollidert() {
         if (this.hastighet > 0 && this.pos.x > width - this.w) {
-			Boss2.snu()
-			return true
+            Boss2.snu()
+            return true
         }
         if (this.hastighet < 0 && this.pos.x < 0) {
-			Boss2.snu()
+            Boss2.snu()
             return true
         }
         return false
@@ -38,26 +38,32 @@ class Boss {
         //rect(this.pos.x, this.pos.y, this.w, this.h);
         image(BossImage, this.pos.x, this.pos.y);
     }
+
+    getCenter() {
+        return createVector(this.pos.x + this.w / 2, this.pos.y + this.h / 2);
+    }
+
     update() {
 
         if (random(500) < 5 + Level) {
             AlienLaser.push(new Laser(this.pos.x + 50, this.pos.y + 75, -1, color(255, 0, 0)));
         }
         this.pos.x += this.hastighet
-		
-		if (this.HP = 0) {
-	boss = false
-	Level++
-	Score += 100000
-		}
-	getCenter() {
-        return createVector(this.pos.x + this.w / 2, this.pos.y + this.h / 2);
+
+        if (this.HP == 0) {
+            boss = false
+            Level++
+            Score += 100000
+        }
+
+
+        for (let indexl = laser.length - 1; indexl >= 0; indexl--) {
+            if (Boss2.getCenter().dist(laser[indexl].pos) < 50) {
+                laser[indexl].skalSlettes = true;
+                Boss2.HP--
+            }
+        }
     }
-	for (let indexl = laser.length - 1; indexl >= 0; indexl--) {
-                if (Boss2.getCenter().dist(laser[indexl].pos) < 50) {
-                    laser[indexl].skalSlettes = true;
-					Boss2.HP--
-    }
-	
+
 
 }

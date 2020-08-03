@@ -128,6 +128,9 @@ function slettFigurer() {
             laser.splice(indexB, 1);
         }
     }
+    if (Boss2.skalSlettes) {
+        boss = false
+    }
 }
 
 function draw() {
@@ -166,6 +169,7 @@ function draw() {
             HP--
             if (HP < 1) {
                 GameOver = true
+                boss = false
                     Level = 1
                     Score = 0
                     setTimeout(setupAliens, 5000);
@@ -181,11 +185,13 @@ function draw() {
         text("Level: " + Level, 20, 20)
         text("Highscore: " + ~~getHighscore(), 20, 60);
         text("HP: " + HP, 20, 80)
+        if (boss) {text("Boss: " + Boss2.HP, 20, 100)} 
         setHighscore();
 
         if (aliens.length == 0 && boss == false) {
             Level++
             if (Level == 2) {
+                Boss2 = new Boss(200, 50)
                 boss = true
             } else {
 				setupAliens();
