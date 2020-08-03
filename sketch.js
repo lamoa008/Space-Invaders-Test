@@ -54,7 +54,6 @@ function setup() {
 }
 
 function setupAliens() {
-	console.log("setupAliens");
     HP = HPCap
         GameOver = false;
     aliens = [];

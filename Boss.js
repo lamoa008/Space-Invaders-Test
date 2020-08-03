@@ -52,7 +52,6 @@ class Boss {
 
         if (this.HP == 0) {
             boss = false
-            Level++
             Score += 100000
         }
 
