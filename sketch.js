@@ -189,7 +189,7 @@ function draw() {
 
         if (aliens.length == 0 && boss == false) {
             Level++
-            if (Level == 2) {
+            if (Level == 10) {
                 Boss2 = new Boss(200, 50)
                 boss = true
             } else {
