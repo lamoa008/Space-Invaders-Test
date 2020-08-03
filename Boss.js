@@ -52,7 +52,7 @@ class Boss {
 
         if (this.HP == 0) {
             boss = false
-            Score += 100000
+            Score += 50000
         }
 
 
